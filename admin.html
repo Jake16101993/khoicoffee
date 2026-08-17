@@ -62,11 +62,13 @@
           <form id="popupForm" class="panel form-panel">
             <label>Tiêu đề<input id="popupTitle" required placeholder="Ví dụ: Giải Liên Quân sắp mở đăng ký"></label>
             <label>Nội dung<textarea id="popupBody" rows="5" placeholder="Thông báo ngắn cho khách..."></textarea></label>
-            <div class="two-col"><label>Nút CTA<input id="popupCtaLabel" placeholder="Xem ngay"></label><label>Link CTA<input id="popupCtaUrl" placeholder="#events hoặc https://..."></label></div>
-            <div class="two-col"><label>Hiển thị<select id="popupFrequency"><option value="session">1 lần / phiên truy cập</option><option value="always">Mỗi lần tải trang</option></select></label><label>Ảnh hiện tại<input id="popupImageUrl" placeholder="URL ảnh"></label></div>
+            <div class="two-col"><label>Nút CTA<input id="popupCtaLabel" placeholder="Xem ngay"></label><label>Hành động<select id="popupActionType"><option value="none">Không có</option><option value="url">Mở link</option><option value="event">Đi tới sự kiện</option></select></label></div>
+            <div class="two-col" id="popupUrlRow"><label>Link CTA<input id="popupCtaUrl" placeholder="#events hoặc https://..."></label><label>Hiển thị<select id="popupFrequency"><option value="session">1 lần / phiên truy cập</option><option value="always">Mỗi lần tải trang</option></select></label></div>
+            <div id="popupEventRow" hidden><label>Chọn sự kiện<select id="popupEventId"><option value="">— Chọn sự kiện —</option></select></label></div>
+            <label>Ảnh hiện tại<input id="popupImageUrl" placeholder="URL ảnh"></label>
             <label class="upload-box">Ảnh popup<input type="file" id="popupImageFile" accept="image/*"><span>Chọn ảnh để upload</span></label>
             <div class="two-col"><label>Bắt đầu (không bắt buộc)<input type="datetime-local" id="popupStartAt"></label><label>Kết thúc (không bắt buộc)<input type="datetime-local" id="popupEndAt"></label></div>
-            <button class="primary-btn" type="submit">Lưu popup</button>
+            <div class="popup-form-actions"><button class="primary-btn" type="submit">Lưu popup</button><button class="secondary-btn" type="button" id="previewPopupBtn">Xem thử popup</button></div>
           </form>
           <div class="panel preview-panel"><span class="panel-kicker">PREVIEW</span><div class="popup-preview"><img id="popupPreviewImage" alt="Preview popup"><div><h3 id="popupPreviewTitle">Có gì mới tại Khói?</h3><p id="popupPreviewBody">Nội dung popup sẽ hiển thị ở đây.</p><button id="popupPreviewButton">Xem ngay</button></div></div></div>
         </div>
