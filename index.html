@@ -60,11 +60,11 @@
     </article>
 
     <section class="events-compact" id="events">
-      <div class="row-head"><h3>SỰ KIỆN NỔI BẬT</h3><button data-scroll="#events-list">Xem tất cả &nbsp;→</button></div>
+      <div class="row-head events-head"><div><span class="events-kicker">WHAT’S ON AT KHÓI</span><h3>SỰ KIỆN NỔI BẬT</h3></div><button id="openAllEvents">Xem tất cả &nbsp;→</button></div>
       <div class="event-strip" id="events-list">
-        <article class="mini-event open-modal" data-title="Board Game Night" data-time="24.05 • 19:00 — 22:00" data-price="89K/người" data-type="GAME NIGHT" data-desc="Một tối chơi board game thư giãn, dễ làm quen và phù hợp cả người mới. Khói chuẩn bị không gian xanh, bàn chơi và hướng dẫn để mọi người có thể nhập cuộc nhanh." data-highlights="Nhiều board game dễ chơi|Có người hướng dẫn|Phù hợp đi một mình hoặc theo nhóm|Không gian café sân vườn">
-          <img src="assets/cafe-01.jpg" alt="Board Game Night"><div class="shade"></div>
-          <div class="mini-copy"><span>GAME NIGHT</span><h4>Board Game Night</h4><p>24.05.2025 · 19:00 - 22:00</p><b>♙ 89K/người</b></div>
+        <article class="mini-event open-modal featured-event" data-title="Giải đấu Liên Quân tại Khói Coffee" data-time="Sắp công bố • 13:00 — 18:00" data-price="100K/người" data-type="GIẢI ĐẤU LIÊN QUÂN" data-desc="Cùng đồng đội tranh tài tại giải Liên Quân của Khói Coffee. Không gian thi đấu thoải mái, giao lưu vui vẻ và có cơ hội nhận quà dành cho những đội chơi nổi bật." data-highlights="Thi đấu Liên Quân theo đội|Không khí giao lưu sôi động|Phí tham gia 100K/người|Số lượng chỗ có giới hạn">
+          <img src="assets/lienquan-event.png" alt="Giải đấu Liên Quân tại Khói Coffee"><div class="shade"></div>
+          <div class="featured-badge">★ SỰ KIỆN NỔI BẬT</div><div class="mini-copy"><span>GIẢI ĐẤU</span><h4>Giải đấu Liên Quân</h4><p>Sắp công bố · 13:00 - 18:00</p><b>♙ 100K/người</b></div>
         </article>
         <article class="mini-event open-modal" data-title="Latte Art Workshop" data-time="31.05 • 14:00 — 16:30" data-price="399K/người" data-type="WORKSHOP" data-desc="Workshop thực hành latte art dành cho người mới, từ cách đánh sữa đến tạo hình cơ bản. Mỗi khách có thời gian tự tay thực hành và mang về trải nghiệm thật cùng barista." data-highlights="Thực hành trực tiếp|Hướng dẫn từng bước|Bao gồm nguyên liệu|Nhóm nhỏ dễ tương tác">
           <img src="assets/cafe-06.jpg" alt="Latte Art Workshop"><div class="shade"></div>
@@ -120,6 +120,15 @@
     <a href="https://www.facebook.com/khoicoffee404" target="_blank" rel="noopener"><strong>Facebook:</strong> facebook.com/khoicoffee404</a>
   </div>
 </footer>
+
+
+<div class="modal" id="allEventsModal" aria-hidden="true">
+  <div class="modal-card all-events-card">
+    <button class="modal-close">×</button>
+    <div class="all-events-heading"><span class="events-kicker">WHAT’S ON AT KHÓI</span><h2>Tất cả sự kiện</h2><p>Chọn một sự kiện để xem đầy đủ thông tin.</p></div>
+    <div class="all-events-grid" id="allEventsGrid"></div>
+  </div>
+</div>
 
 <div class="modal" id="eventModal" aria-hidden="true">
   <div class="modal-card event-modal-card">
