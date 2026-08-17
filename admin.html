@@ -17,6 +17,7 @@
         <button class="active" data-view="dashboard"><span>⌂</span> Tổng quan</button>
         <button data-view="events"><span>✦</span> Sự kiện</button>
         <button data-view="bookings"><span>▣</span> Booking phòng</button>
+        <button data-view="spaces"><span>▧</span> Không gian quán</button>
         <button data-view="popup"><span>◫</span> Popup website</button>
       </nav>
       <div class="sidebar-foot"><a href="index.html" target="_blank">↗ Mở website</a><button id="logoutBtn">Đăng xuất</button></div>
@@ -47,6 +48,12 @@
         <div class="section-toolbar"><div><h2>Khách book phòng</h2><p>Thông tin khách để lại từ form đặt phòng trên website.</p></div><button class="ghost-btn" id="exportBookings">Xuất CSV</button></div>
         <div class="filter-row"><input id="bookingSearch" placeholder="Tìm tên hoặc số điện thoại..."><select id="bookingStatusFilter"><option value="all">Tất cả trạng thái</option><option value="new">Mới</option><option value="contacted">Đã liên hệ</option><option value="confirmed">Đã xác nhận</option><option value="cancelled">Đã hủy</option></select></div>
         <div class="table-wrap"><table class="admin-table"><thead><tr><th>Khách</th><th>Ngày / Giờ</th><th>Số người</th><th>Thời lượng</th><th>Ghi chú</th><th>Trạng thái</th></tr></thead><tbody id="bookingsTbody"></tbody></table></div>
+      </section>
+
+
+      <section class="admin-view" id="view-spaces">
+        <div class="section-toolbar"><div><h2>Không gian quán</h2><p>Upload, bật/tắt và sắp xếp ảnh hiển thị trong mục Không gian Khói.</p></div><label class="upload-box compact-upload">＋ Upload ảnh<input type="file" id="spaceImageFile" accept="image/*" multiple></label></div>
+        <div id="spaceAdminGrid" class="space-admin-grid"></div>
       </section>
 
       <section class="admin-view" id="view-popup">

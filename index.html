@@ -3,8 +3,31 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Khói Coffee — Events & Community</title>
-  <meta name="description" content="Khói Coffee — không gian café sân vườn, events, SpeakHub và phòng họp/làm việc nhóm." />
+  <title>Khói Coffee Gò Vấp | Cafe sân vườn, sự kiện & không gian riêng</title>
+  <meta name="description" content="Khói Coffee tại 404 Thống Nhất, P.16, Gò Vấp, TP.HCM — cafe sân vườn xanh, tổ chức sự kiện, workshop, phòng họp, học nhóm và English Speaking Club SpeakHub." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://www.khoicoffee.vn/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="vi_VN" />
+  <meta property="og:site_name" content="Khói Coffee" />
+  <meta property="og:title" content="Khói Coffee Gò Vấp | Cafe sân vườn, sự kiện & không gian riêng" />
+  <meta property="og:description" content="Nơi cà phê chill, sự kiện chất, không gian xanh tại Gò Vấp." />
+  <meta property="og:url" content="https://www.khoicoffee.vn/" />
+  <meta property="og:image" content="https://www.khoicoffee.vn/assets/cafe-05.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Khói Coffee Gò Vấp" />
+  <meta name="twitter:description" content="Cafe sân vườn, sự kiện, workshop và không gian riêng tại 404 Thống Nhất, Gò Vấp." />
+  <meta name="twitter:image" content="https://www.khoicoffee.vn/assets/cafe-05.jpg" />
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"CafeOrCoffeeShop",
+    "name":"Khói Coffee",
+    "url":"https://www.khoicoffee.vn/",
+    "telephone":"+84377125247",
+    "image":"https://www.khoicoffee.vn/assets/cafe-05.jpg",
+    "address":{"@type":"PostalAddress","streetAddress":"404 Thống Nhất, P.16","addressLocality":"Gò Vấp","addressRegion":"TP. Hồ Chí Minh","addressCountry":"VN"},
+    "sameAs":["https://www.facebook.com/khoicoffee404"]
+  }</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=Lora:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
@@ -60,6 +83,7 @@
 
     <section class="events-compact" id="events">
       <div class="row-head events-head"><div><h3>SỰ KIỆN NỔI BẬT</h3></div><button id="openAllEvents">Xem tất cả &nbsp;→</button></div>
+      <div class="swipe-hint">Kéo qua để xem thêm <span>→</span></div>
       <div class="event-strip" id="events-list">
         <article class="mini-event open-modal featured-event" data-title="Giải đấu Liên Quân tại Khói Coffee" data-time="Sắp công bố • 13:00 — 18:00" data-price="100K/người" data-type="GIẢI ĐẤU LIÊN QUÂN" data-desc="Cùng đồng đội tranh tài tại giải Liên Quân của Khói Coffee. Không gian thi đấu thoải mái, giao lưu vui vẻ và có cơ hội nhận quà dành cho những đội chơi nổi bật." data-highlights="Thi đấu Liên Quân theo đội|Không khí giao lưu sôi động|Phí tham gia 100K/người|Số lượng chỗ có giới hạn">
           <img src="assets/lienquan-event.png" alt="Giải đấu Liên Quân tại Khói Coffee"><div class="shade"></div>
@@ -78,7 +102,8 @@
 
     <section class="gallery-block" id="gallery">
       <div class="row-head"><h3>KHÔNG GIAN KHÓI</h3><button id="openGallery">Xem tất cả &nbsp;→</button></div>
-      <div class="gallery-strip">
+      <div class="swipe-hint">Kéo qua để xem thêm <span>→</span></div>
+      <div class="gallery-strip" id="galleryStrip">
         <button data-gallery="0"><img src="assets/cafe-01.jpg" alt="Không gian Khói 1"></button>
         <button data-gallery="1"><img src="assets/cafe-02.jpg" alt="Không gian Khói 2"></button>
         <button data-gallery="2"><img src="assets/cafe-08.jpg" alt="Không gian Khói 3"></button>
@@ -95,6 +120,7 @@
         </div>
         <div class="drinks-pane">
           <div class="drinks-subhead"><h3>ĐỒ UỐNG CHẤT</h3><button id="openDrinks">Xem tất cả &nbsp;→</button></div>
+          <div class="swipe-hint drink-swipe-hint">Kéo qua để xem thêm <span>→</span></div>
           <div class="drink-four">
             <button data-drink="0"><img src="assets/drink-01.png" alt="Đồ uống Khói Coffee 1"></button>
             <button data-drink="1"><img src="assets/drink-02.png" alt="Đồ uống Khói Coffee 2"></button>
@@ -117,6 +143,7 @@
   <div class="footer-contact">
     <a href="tel:0377125247"><strong>Hotline:</strong> 0377 125 247</a>
     <a href="https://www.facebook.com/khoicoffee404" target="_blank" rel="noopener"><strong>Facebook:</strong> facebook.com/khoicoffee404</a>
+    <a class="footer-address" href="https://www.google.com/maps/search/?api=1&query=404+Thống+Nhất+Phường+16+Gò+Vấp+TPHCM" target="_blank" rel="noopener"><strong>Địa chỉ Khói Coffee:</strong> 404 Thống Nhất, P.16, Gò Vấp, TP. HCM</a>
   </div>
 </footer>
 

@@ -1,6 +1,6 @@
 const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
 const db=window.KhoiDB?.client;
-const state={events:[],bookings:[],popup:null,currentView:'dashboard'};
+const state={events:[],bookings:[],spaces:[],popup:null,currentView:'dashboard'};
 
 function toast(msg,type='ok'){const t=$('#toast');t.textContent=msg;t.className='toast show'+(type==='error'?' error':'');clearTimeout(toast._t);toast._t=setTimeout(()=>t.className='toast',2600)}
 function esc(v=''){return String(v).replace(/[&<>'"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[m]))}
@@ -10,7 +10,7 @@ function fmtTime(t){return t?String(t).slice(0,5):''}
 function statusLabel(s){return({published:'Đã ra mắt',coming_soon:'Coming soon',draft:'Bản nháp',new:'Mới',contacted:'Đã liên hệ',confirmed:'Đã xác nhận',cancelled:'Đã hủy'})[s]||s}
 function safeLocalDateTime(v){if(!v)return '';const d=new Date(v);const pad=n=>String(n).padStart(2,'0');return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}`}
 
-function setView(view){state.currentView=view;$$('.admin-nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));$$('.admin-view').forEach(v=>v.classList.toggle('active',v.id==='view-'+view));const titles={dashboard:['KHÓI COFFEE','Tổng quan'],events:['QUẢN LÝ WEBSITE','Sự kiện'],bookings:['QUẢN LÝ WEBSITE','Booking phòng'],popup:['QUẢN LÝ WEBSITE','Popup website']};$('#viewEyebrow').textContent=titles[view][0];$('#viewTitle').textContent=titles[view][1];$('.admin-sidebar').classList.remove('open')}
+function setView(view){state.currentView=view;$$('.admin-nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===view));$$('.admin-view').forEach(v=>v.classList.toggle('active',v.id==='view-'+view));const titles={dashboard:['KHÓI COFFEE','Tổng quan'],events:['QUẢN LÝ WEBSITE','Sự kiện'],bookings:['QUẢN LÝ WEBSITE','Booking phòng'],spaces:['QUẢN LÝ WEBSITE','Không gian quán'],popup:['QUẢN LÝ WEBSITE','Popup website']};$('#viewEyebrow').textContent=titles[view][0];$('#viewTitle').textContent=titles[view][1];$('.admin-sidebar').classList.remove('open')}
 $$('.admin-nav button').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.view)));$$('[data-jump]').forEach(b=>b.addEventListener('click',()=>setView(b.dataset.jump)));$('#mobileNavBtn').onclick=()=>$('.admin-sidebar').classList.toggle('open');
 
 async function ensureAuth(){
@@ -23,10 +23,11 @@ $('#loginForm').addEventListener('submit',async e=>{e.preventDefault();$('#login
 $('#logoutBtn').onclick=async()=>{if(db)await db.auth.signOut();location.reload()};$('#refreshBtn').onclick=()=>loadAll(true);
 
 async function loadAll(showToast=false){
-  await Promise.all([loadEvents(),loadBookings(),loadPopup()]);renderDashboard();if(showToast)toast('Đã cập nhật dữ liệu');
+  await Promise.all([loadEvents(),loadBookings(),loadSpaces(),loadPopup()]);renderDashboard();if(showToast)toast('Đã cập nhật dữ liệu');
 }
 async function loadEvents(){const {data,error}=await db.from('events').select('*').order('sort_order',{ascending:true}).order('created_at',{ascending:false});if(error){toast('Không tải được sự kiện: '+error.message,'error');return}state.events=data||[];renderEvents()}
 async function loadBookings(){const {data,error}=await db.from('room_bookings').select('*').order('created_at',{ascending:false});if(error){toast('Không tải được booking: '+error.message,'error');return}state.bookings=data||[];renderBookings()}
+async function loadSpaces(){const {data,error}=await db.from('space_gallery').select('*').order('sort_order',{ascending:true}).order('created_at',{ascending:true});if(error){toast('Không tải được ảnh không gian: '+error.message,'error');return}state.spaces=data||[];renderSpaces()}
 async function loadPopup(){const {data,error}=await db.from('site_popup').select('*').eq('id',1).maybeSingle();if(error){toast('Không tải được popup: '+error.message,'error');return}state.popup=data||{id:1,enabled:false};fillPopupForm()}
 
 function renderDashboard(){const visible=state.events.filter(e=>e.status!=='draft').length,newB=state.bookings.filter(b=>b.status==='new').length;$('#statEvents').textContent=visible;$('#statBookings').textContent=newB;$('#statPopup').textContent=state.popup?.enabled?'Đang bật':'Đang tắt';$('#statPopup').style.fontSize='25px';
@@ -49,6 +50,16 @@ function filteredBookings(){const s=$('#bookingSearch').value.trim().toLowerCase
 function renderBookings(){const list=filteredBookings();$('#bookingsTbody').innerHTML=list.map(b=>`<tr><td><strong>${esc(b.name)}</strong><small>${esc(b.phone)}</small></td><td><strong>${fmtDate(b.booking_date)}</strong><small>${fmtTime(b.booking_time)}</small></td><td>${b.people} người</td><td>${esc(b.duration)}</td><td>${esc(b.note||'—')}</td><td><select class="booking-status" data-booking-status="${b.id}"><option value="new" ${b.status==='new'?'selected':''}>Mới</option><option value="contacted" ${b.status==='contacted'?'selected':''}>Đã liên hệ</option><option value="confirmed" ${b.status==='confirmed'?'selected':''}>Đã xác nhận</option><option value="cancelled" ${b.status==='cancelled'?'selected':''}>Đã hủy</option></select></td></tr>`).join('')||'<tr><td colspan="6">Chưa có booking.</td></tr>';$$('[data-booking-status]').forEach(s=>s.onchange=async()=>{const {error}=await db.from('room_bookings').update({status:s.value}).eq('id',s.dataset.bookingStatus);if(error)return toast(error.message,'error');toast('Đã cập nhật trạng thái');await loadBookings();renderDashboard()})}
 $('#bookingSearch').oninput=renderBookings;$('#bookingStatusFilter').onchange=renderBookings;
 $('#exportBookings').onclick=()=>{const rows=filteredBookings(),cols=['name','phone','booking_date','booking_time','people','duration','note','status','created_at'];const csv=[cols.join(','),...rows.map(r=>cols.map(c=>'"'+String(r[c]??'').replace(/"/g,'""')+'"').join(','))].join('\n');const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='khoi-room-bookings.csv';a.click();URL.revokeObjectURL(a.href)};
+
+
+function renderSpaces(){const grid=$('#spaceAdminGrid');if(!grid)return;grid.innerHTML=state.spaces.map(s=>`<article class="space-admin-card"><img src="${esc(s.image_url)}" alt=""><div><label>Thứ tự<input type="number" min="0" value="${Number(s.sort_order||0)}" data-space-sort="${s.id}"></label><label class="space-toggle"><input type="checkbox" ${s.enabled?'checked':''} data-space-enabled="${s.id}"> Hiển thị</label><button class="danger-btn" data-space-delete="${s.id}">Xóa</button></div></article>`).join('')||'<div class="panel">Chưa có ảnh. Upload ảnh đầu tiên để hiển thị trên website.</div>';
+  $$('[data-space-sort]').forEach(el=>el.onchange=()=>updateSpace(el.dataset.spaceSort,{sort_order:Number(el.value||0)}));
+  $$('[data-space-enabled]').forEach(el=>el.onchange=()=>updateSpace(el.dataset.spaceEnabled,{enabled:el.checked}));
+  $$('[data-space-delete]').forEach(el=>el.onclick=()=>deleteSpace(el.dataset.spaceDelete));
+}
+async function updateSpace(id,payload){const {error}=await db.from('space_gallery').update(payload).eq('id',id);if(error)return toast(error.message,'error');toast('Đã cập nhật ảnh');await loadSpaces()}
+async function deleteSpace(id){if(!confirm('Xóa ảnh này khỏi Không gian Khói?'))return;const {error}=await db.from('space_gallery').delete().eq('id',id);if(error)return toast(error.message,'error');toast('Đã xóa ảnh');await loadSpaces()}
+$('#spaceImageFile')?.addEventListener('change',async e=>{const files=[...(e.target.files||[])];if(!files.length)return;try{toast('Đang upload ảnh không gian...');let order=state.spaces.reduce((m,x)=>Math.max(m,Number(x.sort_order||0)),0)+1;for(const file of files){const url=await uploadFile(file,'spaces');const {error}=await db.from('space_gallery').insert({image_url:url,enabled:true,sort_order:order++});if(error)throw error}e.target.value='';toast('Đã thêm ảnh không gian');await loadSpaces()}catch(err){toast(err.message||'Upload thất bại','error')}});
 
 function fillPopupForm(){const p=state.popup||{};$('#popupEnabled').checked=Boolean(p.enabled);$('#popupEnabledLabel').textContent=p.enabled?'Đang bật':'Đang tắt';$('#popupTitle').value=p.title||'';$('#popupBody').value=p.body||'';$('#popupCtaLabel').value=p.cta_label||'';$('#popupCtaUrl').value=p.cta_url||'';$('#popupFrequency').value=p.frequency||'session';$('#popupImageUrl').value=p.image_url||'';$('#popupStartAt').value=safeLocalDateTime(p.start_at);$('#popupEndAt').value=safeLocalDateTime(p.end_at);updatePopupPreview()}
 function updatePopupPreview(){const src=$('#popupImageUrl').value.trim();$('#popupPreviewImage').src=src||'';if(!src)$('#popupPreviewImage').removeAttribute('src');$('#popupPreviewTitle').textContent=$('#popupTitle').value||'Có gì mới tại Khói?';$('#popupPreviewBody').textContent=$('#popupBody').value||'Nội dung popup sẽ hiển thị ở đây.';$('#popupPreviewButton').textContent=$('#popupCtaLabel').value||'Xem ngay';$('#popupEnabledLabel').textContent=$('#popupEnabled').checked?'Đang bật':'Đang tắt'}

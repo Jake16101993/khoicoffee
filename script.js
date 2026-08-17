@@ -49,7 +49,7 @@ q('.open-room-modal')?.addEventListener('click',()=>q('#roomModal')?.classList.a
 qa('.modal-close').forEach(b=>b.addEventListener('click',()=>b.closest('.modal')?.classList.remove('show')));
 qa('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('show')}));
 
-const galleryImgs=qa('.gallery-strip img').map(i=>i.src),drinkImgs=qa('.drink-four img').map(i=>i.src),menuImg=q('.menu-preview img')?.src,lb=q('#lightbox'),lbImg=q('#lightboxImage');
+let galleryImgs=qa('.gallery-strip img').map(i=>i.src);const drinkImgs=qa('.drink-four img').map(i=>i.src),menuImg=q('.menu-preview img')?.src,lb=q('#lightbox'),lbImg=q('#lightboxImage');
 let activeImgs=galleryImgs,idx=0;
 function showFrom(list,i){activeImgs=list.filter(Boolean);if(!activeImgs.length)return;idx=(i+activeImgs.length)%activeImgs.length;lbImg.src=activeImgs[idx];lb.classList.add('show')}
 function show(i){showFrom(activeImgs,i)}
@@ -80,13 +80,25 @@ roomForm?.addEventListener('submit',async e=>{
   roomForm.reset();msg.textContent='Đã nhận yêu cầu. Khói sẽ liên hệ lại với bạn sớm nha!';
 });
 
+
+async function loadPublicSpaces(){
+  if(!window.KhoiDB?.ready)return;
+  const {data,error}=await db.from('space_gallery').select('*').eq('enabled',true).order('sort_order',{ascending:true}).order('created_at',{ascending:true});
+  if(error||!data?.length)return;
+  const strip=q('#galleryStrip'); if(!strip)return;
+  galleryImgs=data.map(x=>x.image_url).filter(Boolean);
+  strip.innerHTML=galleryImgs.slice(0,5).map((src,i)=>`<button data-gallery="${i}"><img src="${esc(src)}" alt="Không gian Khói Coffee ${i+1}" loading="lazy"></button>`).join('');
+  bindGalleryButtons();
+}
+function bindGalleryButtons(){qa('[data-gallery]').forEach(b=>b.onclick=()=>showFrom(galleryImgs,Number(b.dataset.gallery)||0))}
+
 async function loadSitePopup(){
   if(!window.KhoiDB?.ready)return;
   const {data,error}=await db.from('site_popup').select('*').eq('id',1).maybeSingle();if(error||!data?.enabled)return;
   const now=Date.now();if(data.start_at&&now<new Date(data.start_at).getTime())return;if(data.end_at&&now>new Date(data.end_at).getTime())return;
-  if(data.frequency==='session'&&sessionStorage.getItem('khoi_popup_seen')==='1')return;
+  const popupVersion=String(data.updated_at||data.id||'1');if(data.frequency==='session'&&sessionStorage.getItem('khoi_popup_seen')===popupVersion)return;
   q('#sitePromoTitle').textContent=data.title||'';q('#sitePromoBody').textContent=data.body||'';const img=q('#sitePromoImage');if(data.image_url){img.src=data.image_url}else img.removeAttribute('src');const cta=q('#sitePromoCta');cta.textContent=data.cta_label||'Xem ngay';cta.href=data.cta_url||'#events';
-  setTimeout(()=>q('#sitePromoModal')?.classList.add('show'),550);if(data.frequency==='session')sessionStorage.setItem('khoi_popup_seen','1');
+  setTimeout(()=>{q('#sitePromoModal')?.classList.add('show');if(data.frequency==='session')sessionStorage.setItem('khoi_popup_seen',popupVersion)},550);
 }
 q('.site-promo-close')?.addEventListener('click',()=>q('#sitePromoModal')?.classList.remove('show'));
 q('#sitePromoModal')?.addEventListener('click',e=>{if(e.target.id==='sitePromoModal')e.currentTarget.classList.remove('show')});
@@ -94,4 +106,5 @@ q('#sitePromoCta')?.addEventListener('click',e=>{const href=e.currentTarget.getA
 
 renderFeaturedEvents();
 loadPublicEvents();
+loadPublicSpaces();
 loadSitePopup();
