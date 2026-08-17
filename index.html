@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Khói Coffee — Events & Community</title>
+  <meta name="description" content="Khói Coffee — không gian café sân vườn, events, SpeakHub và phòng họp/làm việc nhóm." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=DM+Serif+Display:ital@0;1&family=Lora:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-shell">
+    <a class="logo" href="#top"><img src="assets/khoi-logo.jpg" alt="Khói Coffee"></a>
+    <nav class="nav-links" aria-label="Điều hướng chính">
+      <a href="#top">Trang chủ</a>
+      <a href="#gallery">Không gian</a>
+      <a href="#room">Đặt phòng</a>
+      <a href="#events">Events</a>
+      <a href="#speakhub">SpeakHub</a>
+      <a href="#about">Về Khói</a>
+      <a href="#contact">Liên hệ</a>
+    </nav>
+    <button class="header-cta" data-scroll="#room">▣&nbsp;&nbsp; Đặt chỗ ngay</button>
+    <button class="menu-btn" aria-label="Mở menu">☰</button>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero-wrap">
+    <div class="hero-copy">
+      <div class="eyebrow">✣ &nbsp; EVENTS & COMMUNITY AT KHÓI</div>
+      <h1 class="hero-slogan"><span>NƠI CÀ PHÊ CHILL</span><span>SỰ KIỆN CHẤT</span><span>KHÔNG GIAN XANH</span></h1>
+      <p>Khói Coffee là không gian gặp gỡ, học hỏi và gắn kết qua những sự kiện ý nghĩa.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-scroll="#events">Khám phá sự kiện <b>→</b></button>
+        <button class="btn btn-link" data-scroll="#gallery">Xem không gian <b>→</b></button>
+      </div>
+    </div>
+    <div class="hero-bg" aria-hidden="true"></div>
+    <a class="speakhub-poster" id="speakhub" href="https://speakhub.vn" target="_blank" rel="noopener">
+      <img src="assets/speakhub-poster-v20.jpg" alt="SpeakHub - Nói chuyện với Tây">
+    </a>
+  </section>
+
+  <section class="dashboard-shell">
+    <article class="room-card" id="room">
+      <div class="room-photo"><img src="assets/cafe-07.jpg" alt="Không gian phòng tại Khói Coffee"></div>
+      <div class="room-copy">
+        <div class="tiny-label">✣ &nbsp; ĐẶT KHÔNG GIAN</div>
+        <h2 class="room-title"><span>Phòng họp, làm việc, tổ chức event,</span><span>workshop, học nhóm</span></h2>
+        <div class="room-meta">Diện tích: <strong>30m²</strong><i></i>Sức chứa: tối đa <strong>35 người</strong></div>
+        <div class="room-features">
+          <span>▧ Máy chiếu</span><span>⌁ Wi‑Fi mạnh</span><span>▣ Điều hòa</span><span>◩ Bảng viết</span>
+        </div>
+        <button class="room-btn open-room-modal">Book phòng ngay &nbsp;▣</button>
+      </div>
+    </article>
+
+    <section class="events-compact" id="events">
+      <div class="row-head"><h3>SỰ KIỆN NỔI BẬT</h3><button data-scroll="#events-list">Xem tất cả &nbsp;→</button></div>
+      <div class="event-strip" id="events-list">
+        <article class="mini-event open-modal" data-title="Board Game Night" data-time="24.05 • 19:00 — 22:00" data-price="89K/người" data-type="GAME NIGHT" data-desc="Một tối chơi board game thư giãn, dễ làm quen và phù hợp cả người mới. Khói chuẩn bị không gian xanh, bàn chơi và hướng dẫn để mọi người có thể nhập cuộc nhanh." data-highlights="Nhiều board game dễ chơi|Có người hướng dẫn|Phù hợp đi một mình hoặc theo nhóm|Không gian café sân vườn">
+          <img src="assets/cafe-01.jpg" alt="Board Game Night"><div class="shade"></div>
+          <div class="mini-copy"><span>GAME NIGHT</span><h4>Board Game Night</h4><p>24.05.2025 · 19:00 - 22:00</p><b>♙ 89K/người</b></div>
+        </article>
+        <article class="mini-event open-modal" data-title="Latte Art Workshop" data-time="31.05 • 14:00 — 16:30" data-price="399K/người" data-type="WORKSHOP" data-desc="Workshop thực hành latte art dành cho người mới, từ cách đánh sữa đến tạo hình cơ bản. Mỗi khách có thời gian tự tay thực hành và mang về trải nghiệm thật cùng barista." data-highlights="Thực hành trực tiếp|Hướng dẫn từng bước|Bao gồm nguyên liệu|Nhóm nhỏ dễ tương tác">
+          <img src="assets/cafe-06.jpg" alt="Latte Art Workshop"><div class="shade"></div>
+          <div class="mini-copy"><span>WORKSHOP</span><h4>Latte Art Workshop</h4><p>31.05.2025 · 14:00 - 16:30</p><b>♙ 399K/người</b></div>
+        </article>
+        <article class="mini-event open-modal" data-title="Acoustic Chill" data-time="07.06 • 20:00 — 22:00" data-price="79K/người" data-type="LIVE MUSIC" data-desc="Đêm acoustic nhẹ nhàng giữa không gian xanh của Khói. Một buổi tối để nghe nhạc, trò chuyện và thư giãn cùng bạn bè trong không khí gần gũi." data-highlights="Ban nhạc acoustic trực tiếp|Không gian xanh buổi tối|Chỗ ngồi giới hạn|Phù hợp hẹn hò và nhóm bạn">
+          <img src="assets/cafe-05.jpg" alt="Acoustic Chill"><div class="shade"></div>
+          <div class="mini-copy"><span>LIVE MUSIC</span><h4>Acoustic Chill</h4><p>07.06.2025 · 20:00 - 22:00</p><b>♙ 79K/người</b></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="gallery-block" id="gallery">
+      <div class="row-head"><h3>KHÔNG GIAN KHÓI</h3><button id="openGallery">Xem tất cả &nbsp;→</button></div>
+      <div class="gallery-strip">
+        <button data-gallery="0"><img src="assets/cafe-01.jpg" alt="Không gian Khói 1"></button>
+        <button data-gallery="1"><img src="assets/cafe-02.jpg" alt="Không gian Khói 2"></button>
+        <button data-gallery="2"><img src="assets/cafe-08.jpg" alt="Không gian Khói 3"></button>
+        <button data-gallery="3"><img src="assets/cafe-07.jpg" alt="Không gian Khói 4"></button>
+        <button data-gallery="4"><img src="assets/cafe-03.jpg" alt="Không gian Khói 5"></button>
+      </div>
+    </section>
+
+    <section class="drinks-block" id="drinks">
+      <div class="drinks-showcase">
+        <div class="menu-pane">
+          <div class="drinks-subhead"><h3>MENU KHÓI COFFEE</h3></div>
+          <button class="menu-preview" data-menu-preview><img src="assets/menu-new.jpg" alt="Menu Khói Coffee"></button>
+        </div>
+        <div class="drinks-pane">
+          <div class="drinks-subhead"><h3>ĐỒ UỐNG CHẤT</h3><button id="openDrinks">Xem tất cả &nbsp;→</button></div>
+          <div class="drink-four">
+            <button data-drink="0"><img src="assets/drink-01.png" alt="Đồ uống Khói Coffee 1"></button>
+            <button data-drink="1"><img src="assets/drink-02.png" alt="Đồ uống Khói Coffee 2"></button>
+            <button data-drink="2"><img src="assets/drink-03.png" alt="Đồ uống Khói Coffee 3"></button>
+            <button data-drink="3"><img src="assets/drink-04.png" alt="Đồ uống Khói Coffee 4"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section class="about" id="about">
+    <div><span class="tiny-label">VỀ KHÓI</span><h2>Một quán café để gặp nhau,<br><em>không chỉ để uống café.</em></h2></div>
+    <p>Sân vườn nhiều cây xanh, khu indoor máy lạnh và không gian riêng cho meeting, workshop, lớp học hoặc event nhỏ.</p>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="footer-brand">KHÓI COFFEE</div>
+  <div class="footer-contact">
+    <a href="tel:0377125247"><strong>Hotline:</strong> 0377 125 247</a>
+    <a href="https://www.facebook.com/khoicoffee404" target="_blank" rel="noopener"><strong>Facebook:</strong> facebook.com/khoicoffee404</a>
+  </div>
+</footer>
+
+<div class="modal" id="eventModal" aria-hidden="true">
+  <div class="modal-card event-modal-card">
+    <button class="modal-close">×</button>
+    <div class="event-modal-media"><img id="modalImage" alt="Hình sự kiện tại Khói Coffee"></div>
+    <div class="event-modal-content">
+      <span class="event-type" id="modalType">EVENT AT KHÓI</span>
+      <h2 id="modalTitle"></h2>
+      <div class="event-modal-meta"><span>◷ <span id="modalTime"></span></span><span>⌖ Khói Coffee · Không gian xanh</span></div>
+      <div class="event-modal-section"><h4>Về sự kiện</h4><p id="modalDesc"></p></div>
+      <div class="event-modal-section"><h4>Điểm nhấn</h4><ul id="modalHighlights"></ul></div>
+      <div class="event-modal-footer"><div><small>Giá vé</small><strong id="modalPrice"></strong></div><button class="btn btn-primary">Giữ chỗ ngay</button></div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="roomModal" aria-hidden="true"><div class="modal-card room-modal-card"><button class="modal-close">×</button><span class="tiny-label">ĐẶT KHÔNG GIAN</span><h2>Phòng họp, làm việc, tổ chức event, workshop, học nhóm</h2><form><div class="form-grid"><label>Ngày<input type="date"></label><label>Giờ<input type="time"></label><label>Số người<input type="number" min="1" max="35" placeholder="10"></label><label>Thời lượng<select><option>1 giờ</option><option>2 giờ</option><option>3 giờ</option><option>Nửa ngày</option></select></label><label>Họ tên<input type="text" placeholder="Tên của bạn"></label><label>Số điện thoại<input type="tel" placeholder="09xx xxx xxx"></label></div><label>Ghi chú<textarea rows="3" placeholder="Setup bàn ghế, máy chiếu, nhu cầu khác..."></textarea></label><button class="btn btn-primary" type="button">Gửi yêu cầu đặt phòng</button></form></div></div>
+<div class="lightbox" id="lightbox" aria-hidden="true"><button class="lightbox-close">×</button><button class="lb-prev">‹</button><img id="lightboxImage" alt="Ảnh không gian Khói"><button class="lb-next">›</button></div>
+<script src="script.js"></script>
+</body></html>

@@ -1,0 +1,489 @@
+:root{--cream:#f4f1e8;--cream2:#fbf8f1;--green:#173b1d;--green2:#244c25;--lime:#d7e79e;--text:#152415;--muted:#637063;--line:#dad7cd}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--text);font-family:'Be Vietnam Pro',sans-serif}.site-header{height:92px;background:rgba(249,247,240,.96);border-bottom:1px solid #dfdbd0;position:sticky;top:0;z-index:50;backdrop-filter:blur(16px)}.nav-shell{height:100%;max-width:1440px;margin:auto;padding:0 40px;display:flex;align-items:center;gap:30px}.logo img{width:112px;height:70px;object-fit:contain;mix-blend-mode:multiply}.nav-links{display:flex;gap:42px;margin:auto;align-items:center}.nav-links a{text-decoration:none;color:#172517;font-size:15px;font-weight:500;white-space:nowrap}.header-cta,.btn,.room-btn{border:0;cursor:pointer;font:inherit}.header-cta{background:var(--green);color:#fff;border-radius:14px;padding:15px 23px;font-weight:600}.menu-btn{display:none;border:0;background:transparent;font-size:26px}.hero-wrap{min-height:505px;position:relative;overflow:hidden;background:var(--cream2);display:grid;grid-template-columns:40% 60%;border-bottom:1px solid #e0ddd3}.hero-bg{background:linear-gradient(90deg,rgba(250,247,239,.95) 0%,rgba(250,247,239,.28) 35%,rgba(10,25,10,.05) 100%),url('assets/cafe-05.jpg') center/cover no-repeat;grid-column:2;grid-row:1}.hero-copy{grid-column:1;grid-row:1;z-index:2;padding:86px 30px 60px max(62px,calc((100vw - 1440px)/2 + 40px));align-self:center}.eyebrow,.tiny-label{font-size:12px;font-weight:700;letter-spacing:.05em;color:#28572d}.hero-copy h1{font-family:'DM Serif Display',serif;font-size:64px;line-height:.98;margin:30px 0 22px;letter-spacing:-.025em}.hero-copy h1 span{font-family:'Be Vietnam Pro',sans-serif;font-size:.62em;font-weight:800;letter-spacing:-.03em}.hero-copy p{max-width:470px;line-height:1.7;font-size:16px}.hero-actions{display:flex;gap:22px;margin-top:30px;align-items:center}.btn{border-radius:14px;padding:14px 22px}.btn-primary{background:var(--green);color:#fff}.btn-link{background:transparent;color:var(--text)}.speakhub-poster{position:absolute;z-index:5;right:max(55px,calc((100vw - 1440px)/2 + 30px));top:18px;width:min(395px,27vw);display:block;transform:rotate(1deg);filter:drop-shadow(0 18px 22px rgba(18,40,18,.25))}.speakhub-poster img{width:100%;height:auto;display:block}.dashboard-shell{max-width:1440px;margin:-8px auto 0;padding:0 40px 60px;display:grid;grid-template-columns:42% 58%;gap:28px 42px;position:relative;z-index:8}.room-card{display:grid;grid-template-columns:42% 58%;min-height:246px;background:linear-gradient(135deg,#173a1c,#264d25);border-radius:18px;overflow:hidden;color:#fff;box-shadow:0 13px 30px rgba(32,61,28,.14)}.room-photo img{width:100%;height:100%;object-fit:cover;display:block}.room-copy{padding:25px 28px;display:flex;flex-direction:column;justify-content:center}.room-copy .tiny-label{color:#cfe2a9}.room-copy h2{font-size:27px;line-height:1.15;margin:12px 0 10px}.room-meta{font-size:12px;color:#edf3e9;display:flex;gap:8px;align-items:center;flex-wrap:wrap}.room-meta i{height:18px;width:1px;background:rgba(255,255,255,.3);display:inline-block}.room-features{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0;font-size:10px;color:#edf3e9}.room-btn{background:#dce9a8;color:#153318;border-radius:12px;padding:12px 14px;font-weight:700}.events-compact{min-width:0}.row-head{display:flex;justify-content:space-between;align-items:center;margin:0 0 14px}.row-head h3{font-size:15px;margin:0}.row-head button{border:0;background:none;cursor:pointer;font:inherit;font-size:12px}.event-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.mini-event{height:190px;border-radius:14px;overflow:hidden;position:relative;cursor:pointer;background:#111}.mini-event img{width:100%;height:100%;object-fit:cover;display:block;transition:.35s}.mini-event:hover img{transform:scale(1.04)}.shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 25%,rgba(0,0,0,.88))}.mini-copy{position:absolute;left:16px;right:14px;bottom:13px;color:#fff}.mini-copy span{display:inline-block;background:#d8e79f;color:#24301e;font-size:8px;padding:4px 7px;border-radius:3px}.mini-copy h4{font-size:16px;margin:8px 0 5px}.mini-copy p,.mini-copy b{font-size:9px;margin:0 0 4px;font-weight:500}.gallery-block{grid-column:1/-1}.gallery-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}.gallery-strip button{border:0;padding:0;background:transparent;height:165px;border-radius:13px;overflow:hidden;cursor:pointer}.gallery-strip img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}.gallery-strip button:hover img{transform:scale(1.04)}.about{max-width:1440px;margin:0 auto 60px;padding:52px 40px;display:grid;grid-template-columns:1.2fr 1fr;gap:50px;border-top:1px solid var(--line)}.about h2{font-family:'DM Serif Display',serif;font-size:48px;line-height:1;margin:12px 0}.about h2 em{color:#52733a}.about p{align-self:end;line-height:1.7;color:#4d5b4d}footer{background:#17371a;color:#fff;padding:34px max(40px,calc((100vw - 1360px)/2));display:flex;justify-content:space-between;align-items:center}footer div{font-weight:800;font-size:20px}footer p{margin:0;color:#cbd8c8}.modal{position:fixed;inset:0;background:rgba(9,18,9,.62);display:none;align-items:center;justify-content:center;padding:18px;z-index:100}.modal.show{display:flex}.modal-card{width:min(620px,100%);background:#f8f5ed;border-radius:22px;padding:34px;position:relative}.modal-card h2{font-family:'DM Serif Display',serif;font-size:42px;line-height:1;margin:15px 0}.modal-close{position:absolute;right:16px;top:12px;border:0;background:transparent;font-size:30px;cursor:pointer}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.modal label{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:600;margin-bottom:12px}.modal input,.modal select,.modal textarea{width:100%;padding:12px;border:1px solid #d6d2c8;border-radius:10px;background:#fff;font:inherit}.lightbox{position:fixed;inset:0;z-index:110;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;padding:30px}.lightbox.show{display:flex}.lightbox img{max-width:min(1200px,90vw);max-height:86vh;border-radius:14px}.lightbox button{position:absolute;border:0;background:rgba(255,255,255,.14);color:#fff;width:46px;height:46px;border-radius:50%;font-size:28px;cursor:pointer}.lightbox-close{right:24px;top:20px}.lb-prev{left:24px}.lb-next{right:24px}
+@media(max-width:1050px){.nav-links{gap:22px}.hero-copy h1{font-size:54px}.speakhub-poster{width:330px}.dashboard-shell{grid-template-columns:1fr}.room-card{max-width:700px}.events-compact{grid-column:1}.gallery-block{grid-column:1}.gallery-strip{grid-template-columns:repeat(3,1fr)}.gallery-strip button:nth-child(n+4){display:none}}
+@media(max-width:760px){.site-header{height:72px}.nav-shell{padding:0 16px}.logo img{width:85px;height:55px}.nav-links,.header-cta{display:none}.menu-btn{display:block;margin-left:auto}.hero-wrap{display:block;min-height:0;padding-bottom:16px;background:#f7f4ec}.hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(250,247,239,.98) 0%,rgba(250,247,239,.92) 44%,rgba(250,247,239,.36) 68%,rgba(15,30,13,.08) 100%),url('assets/cafe-05.jpg') center/cover no-repeat}.hero-copy{position:relative;padding:34px 18px 14px;max-width:none}.eyebrow{font-size:9px}.hero-copy h1{font-size:45px;margin:18px 0 14px}.hero-copy h1 span{font-size:.56em}.hero-copy p{font-size:13px;max-width:95%}.hero-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:22px}.hero-actions .btn{padding:12px 10px;font-size:11px}.speakhub-poster{position:relative;right:auto;top:auto;width:calc(100% - 32px);margin:10px auto 0;transform:none;filter:drop-shadow(0 12px 16px rgba(15,35,15,.17))}.dashboard-shell{margin:0;padding:18px 12px 42px;display:block}.room-card{grid-template-columns:1fr;min-height:0;margin-bottom:30px}.room-photo{height:190px}.room-copy{padding:22px 18px}.room-copy h2{font-size:24px}.room-features{gap:8px 12px}.events-compact{margin-bottom:32px}.event-strip{display:flex;overflow-x:auto;gap:10px;scroll-snap-type:x mandatory;padding-bottom:6px}.mini-event{min-width:78vw;scroll-snap-align:start}.gallery-strip{display:flex;overflow-x:auto;gap:9px}.gallery-strip button{display:block!important;min-width:72vw;height:170px}.about{display:block;margin:0 12px 42px;padding:38px 0}.about h2{font-size:38px}.about p{font-size:13px}footer{padding:28px 18px;display:block}footer p{margin-top:8px;font-size:12px}.form-grid{grid-template-columns:1fr}.modal-card{padding:28px 18px}.modal-card h2{font-size:34px}.lightbox{padding:10px}.lightbox img{max-width:95vw}.lb-prev{left:8px}.lb-next{right:8px}.lightbox-close{right:8px;top:8px}}
+
+/* V9 layout refinements */
+@media (min-width:761px){
+  .hero-wrap{min-height:560px;}
+  .speakhub-poster{width:min(365px,25vw);top:22px;bottom:auto;}
+  .dashboard-shell{margin:28px auto 0;}
+  .events-compact .row-head{margin-top:18px;margin-bottom:16px;}
+}
+@media (max-width:760px){
+  .hero-wrap{padding-bottom:34px;}
+  .hero-bg{background:linear-gradient(180deg,rgba(250,247,239,.96) 0%,rgba(250,247,239,.82) 42%,rgba(250,247,239,.22) 72%,rgba(15,30,13,.04) 100%),url('assets/cafe-05.jpg') center/cover no-repeat;}
+  .speakhub-poster{width:68%;max-width:285px;margin:22px auto 8px;}
+  .dashboard-shell{padding-top:28px;}
+  .events-compact .row-head{margin-top:8px;margin-bottom:16px;}
+}
+@media (max-width:420px){
+  .speakhub-poster{width:64%;max-width:250px;}
+}
+/* V10: use the wide SpeakHub artwork on mobile */
+@media (max-width:760px){
+  .speakhub-poster{width:92%;max-width:620px;margin:22px auto 10px;}
+  .speakhub-poster img{content:url('assets/speakhub-mobile.png');width:100%;height:auto;object-fit:contain;}
+}
+@media (max-width:420px){
+  .speakhub-poster{width:94%;max-width:none;}
+}
+\n\n
+
+/* Drinks showcase — menu on the left, four signature drinks on the right */
+.drinks-block{grid-column:1/-1;margin-top:22px;padding-bottom:6px}
+.drinks-showcase{display:grid;grid-template-columns:minmax(360px,1.05fr) minmax(0,1.95fr);gap:14px;height:310px}
+.drinks-showcase button{border:0;padding:0;background:transparent;border-radius:13px;overflow:hidden;cursor:pointer}
+.drinks-showcase img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s ease}
+.drinks-showcase button:hover img{transform:scale(1.025)}
+.menu-preview{height:310px}
+.menu-preview img{object-position:center}
+.drink-four{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;min-width:0}
+.drink-four button{height:310px}
+.drink-four img{object-position:center}
+@media(max-width:1050px){
+  .drinks-showcase{grid-template-columns:1fr 1.6fr;height:270px}
+  .menu-preview,.drink-four button{height:270px}
+  .drink-four{grid-template-columns:repeat(2,1fr)}
+  .drink-four button:nth-child(n+3){display:none}
+}
+@media(max-width:760px){
+  .drinks-block{margin-top:24px}
+  .drinks-showcase{display:block;height:auto}
+  .menu-preview{width:100%;height:auto;aspect-ratio:1.45/1;margin-bottom:10px}
+  .menu-preview img{object-fit:cover}
+  .drink-four{display:flex;overflow-x:auto;gap:9px;scroll-snap-type:x mandatory;padding-bottom:5px;scrollbar-width:none}
+  .drink-four::-webkit-scrollbar{display:none}
+  .drink-four button{display:block!important;min-width:42vw;height:220px;scroll-snap-align:start}
+}
+
+/* V15 — only Menu Khói Coffee + Đồ uống chất section adjusted */
+.drinks-block{grid-column:1/-1;margin-top:22px;padding-bottom:6px}
+.drinks-showcase{display:grid;grid-template-columns:1fr 1fr;gap:28px;height:auto;width:100%}
+.menu-pane,.drinks-pane{min-width:0;display:flex;flex-direction:column}
+.drinks-subhead{height:32px;display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:10px}
+.drinks-subhead h3{font-size:15px;margin:0;font-weight:700}
+.drinks-subhead button{border:0;background:none;cursor:pointer;font:inherit;font-size:12px;padding:0}
+.menu-preview{width:100%;height:322px;border:0;padding:0;background:transparent;border-radius:13px;overflow:hidden;cursor:pointer}
+.menu-preview img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .3s ease}
+.drink-four{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;min-width:0}
+.drink-four button{height:322px;border:0;padding:0;background:transparent;border-radius:13px;overflow:hidden;cursor:pointer}
+.drink-four img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .3s ease}
+.menu-preview:hover img,.drink-four button:hover img{transform:scale(1.025)}
+
+@media(max-width:1050px){
+  .drinks-showcase{grid-template-columns:1fr 1fr;gap:18px}
+  .menu-preview,.drink-four button{height:280px}
+  .drink-four{grid-template-columns:repeat(2,1fr)}
+  .drink-four button:nth-child(n+3){display:none}
+}
+
+@media(max-width:760px){
+  .drinks-block{margin-top:24px}
+  .drinks-showcase{display:block;width:100%}
+  .menu-pane{margin-bottom:26px}
+  .drinks-subhead{height:auto;min-height:28px;margin-bottom:10px;align-items:center}
+  .menu-preview{width:100%;height:auto;aspect-ratio:1.45/1}
+  .menu-preview img{object-fit:cover}
+  .drinks-pane .drinks-subhead{display:flex;order:0;margin-bottom:10px}
+  .drinks-pane .drinks-subhead button{display:block;margin-left:auto}
+  .drink-four{display:flex;overflow-x:auto;gap:9px;scroll-snap-type:x mandatory;padding-bottom:5px;scrollbar-width:none}
+  .drink-four::-webkit-scrollbar{display:none}
+  .drink-four button{display:block!important;min-width:42vw;height:220px;scroll-snap-align:start}
+}
+
+/* V16 requested UI refinements */
+.hero-copy h1 .hero-first{font-family:'DM Serif Display',serif;font-size:1em;font-weight:400;letter-spacing:-.025em}
+.hero-copy h1 .hero-rest{font-family:'Be Vietnam Pro',sans-serif;font-size:.62em;font-weight:800;letter-spacing:-.03em}
+@media (min-width:761px){
+  .hero-copy h1 .hero-first{white-space:nowrap}
+}
+
+/* Keep the complete menu visible on desktop */
+.menu-preview{height:auto;aspect-ratio:1488/1024;background:#171717}
+.menu-preview img{object-fit:contain!important;object-position:center}
+.drink-four{grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,1fr)}
+.drink-four button{height:155px}
+
+/* Rich event details popup */
+.event-modal-card{width:min(920px,96vw);padding:0;display:grid;grid-template-columns:minmax(280px,.92fr) 1.08fr;overflow:hidden;background:#f8f5ed}
+.event-modal-media{min-height:520px;background:#18371b}
+.event-modal-media img{width:100%;height:100%;object-fit:cover;display:block}
+.event-modal-content{padding:34px 36px;display:flex;flex-direction:column}
+.event-type{display:inline-flex;align-self:flex-start;background:#d9e8a6;color:#234021;font-size:10px;font-weight:800;letter-spacing:.06em;padding:6px 9px;border-radius:999px}
+.event-modal-content h2{margin:14px 0 12px;font-size:40px}
+.event-modal-meta{display:grid;gap:7px;font-size:12px;color:#536052;padding-bottom:18px;border-bottom:1px solid #ded9cc}
+.event-modal-section{padding-top:18px}
+.event-modal-section h4{font-size:13px;margin:0 0 8px}
+.event-modal-section p{font-size:13px;line-height:1.65;color:#455145;margin:0}
+.event-modal-section ul{list-style:none;padding:0;margin:0;display:grid;gap:7px;font-size:12px;color:#3f4e3f}
+.event-modal-section li::before{content:'✓';color:#2e7133;font-weight:800;margin-right:8px}
+.event-modal-footer{margin-top:auto;padding-top:22px;display:flex;align-items:end;justify-content:space-between;gap:16px}
+.event-modal-footer div{display:flex;flex-direction:column;gap:4px}.event-modal-footer small{font-size:10px;color:#677267}.event-modal-footer strong{font-size:19px}
+
+@media(max-width:1050px) and (min-width:761px){
+  .drink-four button{height:130px}
+}
+
+@media(max-width:760px){
+  /* Half-screen event and space cards */
+  .mini-event{min-width:calc(50vw - 17px);width:calc(50vw - 17px);height:170px}
+  .gallery-strip button{min-width:calc(50vw - 17px);width:calc(50vw - 17px);height:145px}
+  .mini-copy{left:10px;right:8px;bottom:9px}.mini-copy h4{font-size:12px}.mini-copy p,.mini-copy b{font-size:8px}.mini-copy span{font-size:7px;padding:3px 5px}
+
+  /* Menu stays complete on mobile too */
+  .menu-preview{aspect-ratio:1488/1024;height:auto}
+  .menu-preview img{object-fit:contain!important}
+
+  /* Six drinks, three across */
+  .drink-four{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,auto);gap:7px;overflow:visible;padding-bottom:0}
+  .drink-four button{display:block!important;min-width:0;width:100%;height:auto;aspect-ratio:.78/1}
+  .drinks-pane .drinks-subhead{margin-bottom:9px}
+
+  .event-modal-card{width:min(94vw,560px);max-height:90vh;display:block;overflow:auto}
+  .event-modal-media{height:220px;min-height:0}
+  .event-modal-content{padding:22px 18px 24px}
+  .event-modal-content h2{font-size:30px}
+  .event-modal-footer{margin-top:20px}
+}
+
+/* V17 — drinks layout only */
+@media (min-width:761px){
+  .drinks-showcase{grid-template-columns:1fr 1fr;align-items:stretch}
+  .drinks-pane{min-height:0}
+  .drink-four{flex:1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(3,minmax(0,1fr));gap:9px;min-height:0}
+  .drink-four button{height:auto;min-height:0}
+  .drink-four img{object-fit:contain!important;background:#f5f1e7}
+}
+@media (max-width:760px){
+  .drink-four{display:flex!important;flex-wrap:nowrap!important;overflow-x:auto!important;gap:7px;scroll-snap-type:x mandatory;padding-bottom:5px;scrollbar-width:none}
+  .drink-four::-webkit-scrollbar{display:none}
+  .drink-four button{display:block!important;flex:0 0 calc(33.333vw - 12px)!important;width:calc(33.333vw - 12px)!important;min-width:calc(33.333vw - 12px)!important;height:auto!important;aspect-ratio:.78/1;scroll-snap-align:start}
+  .drink-four img{object-fit:cover!important}
+}
+
+/* V18 — desktop drinks grid aligned exactly with Menu Khói Coffee */
+@media (min-width:1025px){
+  .drinks-showcase{
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:28px;
+    align-items:stretch;
+  }
+  .menu-pane,.drinks-pane{
+    min-width:0;
+    overflow:hidden;
+  }
+  .menu-pane{
+    display:flex;
+    flex-direction:column;
+  }
+  .drinks-pane{
+    display:flex;
+    flex-direction:column;
+  }
+  .menu-pane .drinks-subhead,
+  .drinks-pane .drinks-subhead{
+    flex:0 0 32px;
+    height:32px;
+    margin-bottom:10px;
+  }
+  .menu-preview{
+    flex:0 0 auto;
+    width:100%;
+    height:auto;
+    aspect-ratio:1488/1024;
+  }
+  .drink-four{
+    flex:1 1 auto;
+    width:100%;
+    min-width:0;
+    min-height:0;
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    grid-template-rows:repeat(3,minmax(0,1fr));
+    gap:9px;
+  }
+  .drink-four button{
+    width:100%;
+    height:100%;
+    min-width:0;
+    min-height:0;
+    overflow:hidden;
+  }
+  .drink-four img{
+    width:100%;
+    height:100%;
+    object-fit:contain!important;
+    object-position:center;
+    background:#f5f1e7;
+  }
+}
+
+/* V19: four-drink layout */
+@media (min-width: 821px){
+  .drink-four{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:10px;height:100%;min-height:0;}
+  .drink-four button{height:auto!important;min-height:0;}
+  .drink-four button:nth-child(n){display:block;}
+  .drink-four img{width:100%;height:100%;object-fit:contain;background:#f5efe3;}
+}
+@media (max-width: 820px){
+  .drink-four{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:9px;scroll-snap-type:x mandatory;padding-bottom:5px;}
+  .drink-four button{flex:0 0 42vw;min-width:42vw;height:220px!important;scroll-snap-align:start;}
+  .drink-four img{object-fit:contain;background:#f5efe3;}
+}
+\n\n/* V20 — requested UI-only refinements */
+/* Keep the first slogan line on one line and give Vietnamese diacritics enough breathing room. */
+.hero-copy h1{line-height:1.08;overflow:visible}
+.hero-copy h1 .hero-first{
+  font-family:'Be Vietnam Pro',sans-serif!important;
+  font-size:.74em!important;
+  font-weight:800!important;
+  letter-spacing:-.02em!important;
+  line-height:1.18;
+  display:inline-block;
+  padding-top:.10em;
+  overflow:visible;
+}
+.hero-copy h1 .hero-rest{
+  font-family:'Be Vietnam Pro',sans-serif!important;
+  font-size:.62em!important;
+  font-weight:800!important;
+  line-height:1.14;
+}
+@media (min-width:761px){
+  .hero-copy h1 .hero-first{white-space:nowrap}
+}
+
+/* Make every “Xem tất cả →” action easier to spot without changing the surrounding layout. */
+.row-head button,
+.drinks-subhead button{
+  background:#dce9a8!important;
+  color:#173b1d!important;
+  font-size:14px!important;
+  font-weight:800!important;
+  line-height:1!important;
+  padding:10px 14px!important;
+  border:1px solid rgba(23,59,29,.14)!important;
+  border-radius:999px!important;
+  box-shadow:0 4px 10px rgba(23,59,29,.08);
+  transition:transform .18s ease,background .18s ease;
+}
+.row-head button:hover,
+.drinks-subhead button:hover{
+  background:#cfdf90!important;
+  transform:translateY(-1px);
+}
+
+/* The new vertical SpeakHub poster is desktop-only. Mobile still uses the wide artwork from V10. */
+@media (min-width:761px){
+  .speakhub-poster img{content:normal!important}
+}
+
+@media (max-width:760px){
+  .hero-copy h1 .hero-first{font-size:.72em!important;line-height:1.18;padding-top:.12em}
+  .hero-copy h1 .hero-rest{font-size:.60em!important;line-height:1.16}
+  .row-head button,.drinks-subhead button{font-size:12px!important;padding:9px 11px!important}
+}
+
+
+/* V21 — mobile SpeakHub + compact mobile slogan + precise anchor scrolling */
+#events,#gallery,#room,#speakhub{scroll-margin-top:110px}
+@media (max-width:760px){
+  #events,#gallery,#room,#speakhub{scroll-margin-top:86px}
+
+  /* Use the newly supplied horizontal SpeakHub artwork only on mobile. */
+  .speakhub-poster{
+    width:94%!important;
+    max-width:none!important;
+    margin:18px auto 8px!important;
+  }
+  .speakhub-poster img{
+    content:url('assets/speakhub-mobile-v21.jpg')!important;
+    width:100%!important;
+    height:auto!important;
+    object-fit:contain!important;
+  }
+
+  /* Keep “SỰ KIỆN CHẤT · KHÔNG GIAN XANH” on one compact row. */
+  .hero-copy h1 .hero-rest{
+    display:block!important;
+    white-space:nowrap!important;
+    font-size:.39em!important;
+    line-height:1.2!important;
+    letter-spacing:-.025em!important;
+  }
+  .hero-copy h1 .hero-rest br{display:none!important}
+  .hero-copy h1 .hero-rest-a::after{content:'  ·  ';}
+}
+@media (max-width:390px){
+  .hero-copy h1 .hero-rest{font-size:.355em!important;}
+}
+
+/* V22 — mobile cleanup requested */
+@media (max-width:760px){
+  /* Make the second slogan row more prominent without wrapping. */
+  .hero-copy h1 .hero-rest{
+    font-size:.47em!important;
+    line-height:1.18!important;
+    letter-spacing:-.03em!important;
+    white-space:nowrap!important;
+  }
+
+  /* Remove the extra “ĐẶT KHÔNG GIAN” label on mobile. */
+  .room-card .room-copy > .tiny-label{display:none!important;}
+
+  /* Keep room-use title on a single clean line. */
+  .room-card .room-copy h2{
+    white-space:nowrap!important;
+    font-size:clamp(15px,4.15vw,18px)!important;
+    line-height:1.15!important;
+    letter-spacing:-.02em!important;
+    margin-top:0!important;
+  }
+  .room-card .room-copy h2 br{display:none!important;}
+}
+@media (max-width:390px){
+  .hero-copy h1 .hero-rest{font-size:.43em!important;}
+  .room-card .room-copy h2{font-size:14.5px!important;}
+}
+
+
+/* V23 — typography + room title refinements */
+/* Slogan: three clean, consistent headline rows. */
+.hero-copy .hero-slogan{
+  font-family:'Be Vietnam Pro',sans-serif!important;
+  font-weight:800!important;
+  font-size:42px!important;
+  line-height:1.08!important;
+  letter-spacing:-.035em!important;
+  margin:28px 0 22px!important;
+  overflow:visible!important;
+}
+.hero-copy .hero-slogan > span{
+  display:block!important;
+  font:inherit!important;
+  letter-spacing:inherit!important;
+  line-height:inherit!important;
+  padding:.045em 0!important;
+  overflow:visible!important;
+}
+.hero-copy .hero-slogan > span:first-child{white-space:nowrap!important;}
+
+/* Desktop room card: exactly two intentional rows. */
+.room-card .room-title{
+  font-size:25px!important;
+  line-height:1.18!important;
+  letter-spacing:-.025em!important;
+  margin:12px 0 10px!important;
+}
+.room-card .room-title > span{display:block!important;white-space:nowrap!important;}
+
+@media (max-width:1050px) and (min-width:761px){
+  .hero-copy .hero-slogan{font-size:35px!important;}
+  .room-card .room-title{font-size:23px!important;}
+}
+
+@media (max-width:760px){
+  /* Return the mobile slogan to three readable rows too. */
+  .hero-copy .hero-slogan{
+    font-size:clamp(26px,8vw,34px)!important;
+    line-height:1.08!important;
+    letter-spacing:-.035em!important;
+    margin:18px 0 14px!important;
+  }
+  .hero-copy .hero-slogan > span{
+    display:block!important;
+    white-space:nowrap!important;
+    padding:.035em 0!important;
+  }
+
+  /* Preserve the previously requested compact one-line room title on mobile. */
+  .room-card .room-title{
+    font-size:clamp(10.5px,2.9vw,13px)!important;
+    line-height:1.15!important;
+    letter-spacing:-.035em!important;
+    margin-top:0!important;
+    white-space:nowrap!important;
+  }
+  .room-card .room-title > span{display:inline!important;white-space:nowrap!important;}
+  .room-card .room-title > span + span::before{content:' ';}
+}
+
+/* V24 — fit room title, warmer café headline type, real contact info */
+.hero-copy .hero-slogan{
+  font-family:'Lora',serif!important;
+  font-weight:700!important;
+  font-size:clamp(36px,3.05vw,47px)!important;
+  line-height:1.12!important;
+  letter-spacing:-.035em!important;
+}
+.hero-copy .hero-slogan > span{
+  font-family:inherit!important;
+  font-weight:inherit!important;
+  letter-spacing:inherit!important;
+  line-height:inherit!important;
+}
+
+/* Keep the room use-case copy inside the card at every desktop width. */
+.room-card .room-title{
+  width:100%!important;
+  max-width:100%!important;
+  min-width:0!important;
+  font-size:clamp(18px,1.55vw,25px)!important;
+  line-height:1.2!important;
+  letter-spacing:-.03em!important;
+  overflow-wrap:normal!important;
+  word-break:normal!important;
+}
+.room-card .room-title > span{
+  display:block!important;
+  max-width:100%!important;
+  white-space:normal!important;
+}
+.room-copy{min-width:0!important;overflow:hidden!important;}
+
+.footer-brand{font-weight:800;font-size:20px}
+.footer-contact{display:flex;gap:28px;align-items:center;font-size:13px!important;font-weight:500!important}
+.footer-contact a{color:#fff;text-decoration:none;white-space:nowrap}
+.footer-contact a:hover{text-decoration:underline}
+.footer-contact strong{font-weight:700}
+
+@media (max-width:1050px) and (min-width:761px){
+  .room-card .room-title{font-size:clamp(17px,2.05vw,21px)!important;}
+}
+
+@media (max-width:760px){
+  .hero-copy .hero-slogan{
+    font-family:'Lora',serif!important;
+    font-size:clamp(27px,8.2vw,34px)!important;
+    line-height:1.14!important;
+    letter-spacing:-.04em!important;
+  }
+  .hero-copy .hero-slogan > span{white-space:nowrap!important;}
+
+  /* Two tidy rows instead of forcing a single line outside the viewport. */
+  .room-card .room-title{
+    width:100%!important;
+    max-width:100%!important;
+    font-size:clamp(15px,4.25vw,18px)!important;
+    line-height:1.24!important;
+    letter-spacing:-.035em!important;
+    white-space:normal!important;
+    overflow:visible!important;
+  }
+  .room-card .room-title > span{
+    display:block!important;
+    white-space:normal!important;
+  }
+  .room-card .room-title > span + span::before{content:none!important;}
+
+  footer{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:14px!important;}
+  .footer-contact{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:8px!important;font-size:12px!important;}
+  .footer-contact a{white-space:normal!important;overflow-wrap:anywhere;}
+}
+
+@media (max-width:390px){
+  .room-card .room-title{font-size:14.5px!important;}
+  .hero-copy .hero-slogan{font-size:clamp(25px,7.9vw,31px)!important;}
+}
